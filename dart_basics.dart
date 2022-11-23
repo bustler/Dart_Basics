@@ -156,7 +156,7 @@ Map<String, int> Words(List<String> words) {
 
 //5
 Set<int> strToNum(List<String> someString) {
-  const List<String> numbers = [
+  const Set<String> numbers = {
     "zero",
     "one",
     "two",
@@ -167,11 +167,11 @@ Set<int> strToNum(List<String> someString) {
     "seven",
     "eight",
     "nine"
-  ];
+  };
   late Set<int> numString = {};
   for (String element in someString) {
     for (int i = 0; i < numbers.length; i++) {
-      if (numbers[i] == element) {
+      if (numbers.elementAt(i) == (element)) {
         numString.add(i);
         break;
       }
