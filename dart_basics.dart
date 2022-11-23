@@ -311,7 +311,13 @@ class UserManager<T extends User> {
 
   void showAllUser() {
     for (User n in users) {
-      n.getEmail();
+      if (n is AdminUser) {
+        print(n.getMailSystem);
+      } else if (n is GeneralUser) {
+        print(n.email);
+      } else {
+        print("Something wrong");
+      }
     }
   }
 }
